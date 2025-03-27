@@ -1,7 +1,3 @@
-Sure, I can help with that! Here is a detailed documentation for each method in your `basejs.js` file:
-
----
-
 # BaseJS Documentation
 
 **BaseJS** is a utility JavaScript library that provides a collection of generic methods for DOM manipulation, event handling, and form processing. This library is designed to be lightweight and easy to integrate into any web project.
@@ -291,6 +287,68 @@ Posts (or gets) a form to the specified URI with the formData.
   - `completeFunction` (Function, optional): The function to execute on completion.
   - `methodType` (String, optional): The HTTP method. Default is "POST".
 
+Sure, I'll continue documenting from the `postAndReplace` method to the bottom of the file:
+
+---
+
 ### `postAndReplace(ev, uri, replaceElementId, successFunction, errorFunction, completeFunction, closeModalElementId)`
 
-Posts data to the specified URI from a form onsubmit event and replaces the data coming back with the replaceElement
+Posts data to the specified URI from a form onsubmit event and replaces the data coming back with the specified element's inner HTML.
+
+- **Parameters**: 
+  - `ev` (Event): The event that triggered the post.
+  - `uri` (String): The URI to post to.
+  - `replaceElementId` (String): The ID of the element to replace with the response.
+  - `successFunction` (Function, optional): The function to execute on success.
+  - `errorFunction` (Function, optional): The function to execute on error.
+  - `completeFunction` (Function, optional): The function to execute on completion.
+  - `closeModalElementId` (String, optional): The ID of the modal element to close.
+
+### `getFunctionFromString(string)`
+
+Gets a function from a string representation.
+
+- **Parameters**: 
+  - `string` (String): The string representation of the function.
+- **Returns**: 
+  - `Function`: The function object.
+
+### `initValidations()`
+
+Initializes all validations so that once you start typing, it will clear out errors.
+
+### `clearError(ev)`
+
+Clears validation errors when a user starts typing into a field.
+
+- **Parameters**: 
+  - `ev` (Event): The event to use to clear the validations.
+
+### `copyInputField(ev, sourceId, targetId)`
+
+Copies input value from one input control to another.
+
+- **Parameters**: 
+  - `ev` (Event): The event that triggered the copy.
+  - `sourceId` (String, optional): The ID of the source input element.
+  - `targetId` (String, optional): The ID of the target input element.
+
+### `autoFocus()`
+
+Finds the first auto-focus entry and sets it as the current field.
+
+### `initForms()`
+
+Automatically loads forms on the page without requiring the onsubmit routine on each one.
+
+### `initButtons()`
+
+Automatically loads buttons to copy data from one field to another.
+
+### `executeDeferredFunctions()`
+
+Executes deferred functions after the DOM is ready.
+
+### `init()`
+
+Initializes anything on the page that is needed.
