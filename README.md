@@ -348,3 +348,108 @@ Executes deferred functions after the DOM is ready.
 ### `init()`
 
 Initializes anything on the page that is needed.
+
+---
+
+# BaseJS Modals Documentation
+
+**BaseJS Modals** is a module that provides functionality for handling modals in a web application. It includes methods for showing, hiding, and managing the content of modals, as well as handling events related to modals.
+
+## Methods
+
+### `onShowModal(event)`
+
+Handles the event when a modal is shown. It posts to the server and pulls back a partial view.
+
+- **Parameters**: 
+  - `event` (Event): The event object.
+
+### `onHideModal(event)`
+
+Handles the event when a modal is hidden.
+
+- **Parameters**: 
+  - `event` (Event): The event object.
+
+### `loadModal()`
+
+Gets or sets the HTML content for the loading modal.
+
+- **Parameters**: 
+  - `a` (String, optional): The HTML content for the loading modal.
+- **Returns**: 
+  - `String`: The current loading modal HTML content.
+
+### `failModal()`
+
+Gets or sets the HTML content for the failure modal.
+
+- **Parameters**: 
+  - `a` (String, optional): The HTML content for the failure modal.
+- **Returns**: 
+  - `String`: The current failure modal HTML content.
+
+### `failModalResponse()`
+
+Gets or sets the HTML content for the failure response in the failure modal.
+
+- **Parameters**: 
+  - `a` (String, optional): The HTML content for the failure response.
+- **Returns**: 
+  - `String`: The current failure response HTML content.
+
+### `setFailureModal(element, responseData)`
+
+Sets the current failure modal to the specified element with the response from the server.
+
+- **Parameters**: 
+  - `element` (Element): The DOM element to set the failure modal content.
+  - `responseData` (Object, optional): The response data from the server.
+
+### `setLoadingModal(element)`
+
+Sets the current loading modal to the specified element.
+
+- **Parameters**: 
+  - `element` (Element): The DOM element to set the loading modal content.
+
+### `initDefaultModals()`
+
+Initializes default modals. This can be done in three different ways:
+1. If nothing is supplied, uses the hard-coded modals supplied in the JavaScript.
+2. Specify hidden elements on the page with the following information for each type of response:
+   - `LoadingModal`: HTML for the loading modal.
+   - `FailureModal`: HTML for the failure modal.
+     - Replacement value `{responseData}` is required.
+     - Replacement value `{responseText}` is optional.
+   - `FailureModalResponse`: HTML for the text used in the `FailureModal` for `{responseText}` variable.
+3. Specify, per page, the three properties for a specific modal type.
+
+### `initModals()`
+
+Initializes modals by adding event listeners for `shown.bs.modal` and `hidden.bs.modal` events.
+
+### `init()`
+
+Initializes anything on the page that is needed, including modals and default modals.
+
+## Usage
+
+To use the BaseJS Modals module, include the script in your HTML file and call the `init` method to initialize the modals:
+
+```html
+<script src="path/to/basejs.modals.js"></script>
+<script>
+  basejs.modals.init();
+</script>
+```
+
+You can customize the loading and failure modals by setting the appropriate HTML content:
+
+```javascript
+basejs.modals.loadingModal('<div class="modal-dialog">...</div>');
+basejs.modals.failureModal('<div class="modal-dialog">...</div>');
+basejs.modals.failureModalResponse('Custom failure response text');
+```
+
+---
