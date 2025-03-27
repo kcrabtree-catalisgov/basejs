@@ -287,10 +287,6 @@ Posts (or gets) a form to the specified URI with the formData.
   - `completeFunction` (Function, optional): The function to execute on completion.
   - `methodType` (String, optional): The HTTP method. Default is "POST".
 
-Sure, I'll continue documenting from the `postAndReplace` method to the bottom of the file:
-
----
-
 ### `postAndReplace(ev, uri, replaceElementId, successFunction, errorFunction, completeFunction, closeModalElementId)`
 
 Posts data to the specified URI from a form onsubmit event and replaces the data coming back with the specified element's inner HTML.
